@@ -37,7 +37,9 @@ namespace DevStateManagement
             Application["Now"] = this.txtApplication.Text;
             Session["Now"] = this.txtSession.Text;
             Cache["Now"] = this.txtCache.Text;
-            //Response.Cookies["Now"]
+            Response.Cookies["Now"].Value = Server.UrlEncode(txtCookies.Text);
+            ViewState["nOW"] = this.txtViewState.Text;
+            Response.Redirect("FrmStateShow.aspx");
         }
     }
 }
